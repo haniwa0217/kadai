@@ -1,5 +1,9 @@
 <?php
 
+use App\Book;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +15,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BookappController@index');
+ 
+Route::post('/book', 'BookappController@create');
+
+Route::delete('/book/{book}' ,'BookappController@delete');
